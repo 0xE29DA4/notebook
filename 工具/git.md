@@ -86,6 +86,7 @@ git branch -d <本地分支> # 删除本地分支
 git branch -d -r <远程分支> # 删除远程分支
 git branch -D <本地分支> # 强制删除本地分支
 git branch -m <old> <new> # 重命名本地分支
+git branch --unset-upstream [本地分支名] # 取消本地分支对上游分支的追踪
 ```
 
 ## checkout
