@@ -66,6 +66,7 @@ git remote add <远端仓库名> <远端仓库URL> # 关联远程仓库
 git push <远端主机> <本地分支>:<远端分支> # 推送到远程仓库
 git push <远端主机> <本地分支> # 如果本地分支与远端分支名相同
 git push --force <远端主机> <本地分支> # 强制 push
+git push -u orgin [本地分支] # 设置上游并推送到远程仓库
 git push [远端主机] [tag_name] # 将标签推送到远程仓库
 ```
 
