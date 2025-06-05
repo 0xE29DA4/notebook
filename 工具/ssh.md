@@ -52,12 +52,10 @@ PasswordAuthentication no
 ### 生成密钥对
 
 ```sh
-cd ~/.ssh
+ssh-keygen -t ed25519 -C "注释"
 # -t: 指定使用安全的 ed25519 算法
 # -C: 为密钥对添加注释
-ssh-keygen -t ed25519 -C "注释"
 # 会提问文件的保存路径，完全一样将覆盖先前的密钥对，passphrase 相当于二次密码校验，置空即可
-# 完成后将生成两个文件，pub 文件是公钥，另一个是私钥
 ```
 
 ### 使用私钥登陆
