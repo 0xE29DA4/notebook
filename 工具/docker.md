@@ -59,17 +59,30 @@ docker rmi [name:version|id]
 
 ```sh
 # 将镜像另存为本地文件
+docker save nginx:latest >> nginx.tar
+#　或者
 docker save nginx:latest -o nginx.tar
 # 使用本地文件加载镜像
 docker load -i nginx.tar
+
 # 将一个容器打包为镜像
 docker commit -m 'message' CONTAINER [镜像名[:标签]]
+
 # 登陆 docker hub
 docker login
 # 迎合社区规范，为镜像添加标签
 docker tag xxx:v1.0 docker_hub_用户名/xxx:v1.0
 # 推送镜像
 docker push docker_hub_用户名/xxx:v1.0
+
+# 将一个 Docker 容器的文件系统导出为一个 .tar 归档文件
+docker export [OPTIONS] CONTAINER >> xxx.tar
+# 或者
+docker export [OPTIONS] CONTAINER -o xxx.tar
+
+# 将一个 .tar 归档文件导入为 Docker 镜像
+# xxx.tar 可以存在于网络上
+docker import [OPTIONS] xxx.tar IMAGE_NAME[:tag]
 ```
 
 ## 创建或删除容器
