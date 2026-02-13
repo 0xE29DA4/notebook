@@ -1,9 +1,6 @@
-/etc/
-/compose/
+/etc/prompts/
 /.obsidian/
 
-
-*.env
 todos.md
 
 .DS_Store

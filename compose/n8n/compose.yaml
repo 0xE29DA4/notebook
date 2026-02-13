@@ -1,0 +1,79 @@
+services:
+  n8n:
+    image: docker.io/n8nio/n8n:2.4.8
+    container_name: n8n
+    healthcheck:
+      test: [ "CMD", "wget", "-q", "--spider", "http://localhost:5678/healthz" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    ports:
+      # n8n Web UI port
+      - "5678:5678"
+    environment:
+      # ==================== 时区设置 ====================
+      TZ: ${TZ}
+      # n8n 时区 (影响定时任务节点)
+      GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
+      # ==================== 数据库配置 ====================
+      # 默认使用 SQLite，如需 PostgreSQL 请取消下面注释并配置
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: 10.89.0.1
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: ${DB_POSTGRESDB_DATABASE}
+      DB_POSTGRESDB_USER: ${DB_POSTGRESDB_USER}
+      DB_POSTGRESDB_PASSWORD: ${DB_POSTGRESDB_PASSWORD}
+      # ==================== 安全配置 ====================
+      # 加密密钥
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      # 强制文件权限检查
+      N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
+      # ==================== 功能配置 ====================
+      # 启用任务运行器
+      N8N_RUNNERS_ENABLED: "true"
+      # ==================== 访问配置 ====================
+      # n8n 实例的外部访问地址 (用于 Webhook 回调等)
+      # 如果通过反向代理或域名访问，请设置此项
+      # WEBHOOK_URL: ${WEBHOOK_URL}
+      # N8N_HOST: ${N8N_HOST}
+      # N8N_PORT: 5678
+      # N8N_PROTOCOL: https
+      # ==================== 日志配置 ====================
+      # 日志级别: info, debug, warn, error
+      N8N_LOG_LEVEL: ${N8N_LOG_LEVEL}
+      # 日志输出格式: console, file
+      N8N_LOG_OUTPUT: ${N8N_LOG_OUTPUT}
+      # ==================== 执行配置 ====================
+      # 保存成功执行的记录
+      EXECUTIONS_DATA_SAVE_ON_SUCCESS: ${EXECUTIONS_DATA_SAVE_ON_SUCCESS}
+      # 保存失败执行的记录
+      EXECUTIONS_DATA_SAVE_ON_ERROR: ${EXECUTIONS_DATA_SAVE_ON_ERROR}
+      # 自动修剪旧的执行记录
+      EXECUTIONS_DATA_PRUNE: ${EXECUTIONS_DATA_PRUNE}
+      # 保留执行记录的小时数 (默认 336 小时 = 14 天)
+      EXECUTIONS_DATA_MAX_AGE: ${EXECUTIONS_DATA_MAX_AGE}
+      # ==================== Cookie 配置 ====================
+      N8N_SECURE_COOKIE: "false"
+    volumes:
+      # 持久化数据目录
+      - n8n_data:/home/node/.n8n
+      # optional: 挂载本地文件目录供工作流使用
+      - ./local-files:/files
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    restart: unless-stopped
+
+volumes:
+  n8n_data:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
