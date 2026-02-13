@@ -2,8 +2,8 @@
 /compose/
 /.obsidian/
 
-/todos
 
+todos.md
 *.env
 
 .DS_Store
