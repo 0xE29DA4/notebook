@@ -1,0 +1,10 @@
+/etc/
+/compose/
+/.obsidian/
+
+/todo
+
+*.env
+
+.DS_Store
+Thumbs.db
