@@ -3,8 +3,8 @@
 /.obsidian/
 
 
-todos.md
 *.env
+todos.md
 
 .DS_Store
 Thumbs.db
