@@ -3,12 +3,16 @@
 ## git 配置
 
 ```shell
-git config --global user.email "<你的邮箱>"   # 配置全局邮箱
-git config --global user.name "<你的名字>"    # 配置全局姓名
-git config --global --unset http.proxy        # 重置某项配置
+# 配置全局邮箱
+git config --global user.email "<你的邮箱>"
+# 配置全局姓名
+git config --global user.name "<你的名字>"
+# 重置某项配置
+git config --global --unset http.proxy
 # 设置仓库初始化时默认的分支名
 git config --global init.defaultBranch main
-git config --list                             # 查看配置信息
+# 查看配置信息
+git config --list
 ```
 
 ## git 项目初始化
