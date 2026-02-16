@@ -1,4 +1,4 @@
-# Wireguard
+# wg
 
 ## 安装 wireguard
 

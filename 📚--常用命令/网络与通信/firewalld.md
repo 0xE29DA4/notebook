@@ -1,4 +1,4 @@
-# Firewalld
+# firewalld
 
 ## zone 的概念
 

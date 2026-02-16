@@ -1,4 +1,4 @@
-# FRP
+# frp
 
 - 需要一台公网服务器
 - client使用 frpc，server 使用 frps
