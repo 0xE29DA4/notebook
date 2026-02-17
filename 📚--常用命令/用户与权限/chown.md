@@ -1,18 +1,22 @@
 # chown
 
-> Change Owner，改变文件的所有者和组。
+> 改变文件的所有者和组。
+> 更多信息：<https://manned.org/chown>
 
-- 改变所有者
-  ```shell
-  chown username file
-  ```
+- 改变文件所有者：
+  `chown {{用户名}} {{文件}}`
 
-- 改变所有者和组
-  ```shell
-  chown username:groupname file
-  ```
+- 改变文件所有者和组：
+  `chown {{用户名}}:{{组名}} {{文件}}`
 
-- 递归改变目录所有者
-  ```shell
-  chown -R username:groupname directory
-  ```
+- 递归改变目录所有者：
+  `chown -R {{用户名}}:{{组名}} {{目录}}`
+
+- 只改变组：
+  `chown :{{组名}} {{文件}}`
+
+- 显示修改过程：
+  `chown -v {{用户名}} {{文件}}`
+
+- 引用其他文件的所有者设置：
+  `chown --reference={{参考文件}} {{目标文件}}`

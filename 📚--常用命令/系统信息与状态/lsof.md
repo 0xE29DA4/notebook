@@ -1,18 +1,28 @@
 # lsof
 
-> List Open Files，列出打开的文件和相应的进程。注意：列出其他人打开的文件需要 root 权限。
+> 列出打开的文件和相应的进程（列出他人打开的文件需要 root 权限）。
+> 更多信息：<https://manned.org/lsof>
 
-- 查看端口占用情况
-  ```shell
-  lsof -i tcp:3306
-  ```
+- 查看端口占用情况：
+  `sudo lsof -i :{{端口}}`
 
-- 查看指定用户打开的文件
-  ```shell
-  lsof -u username
-  ```
+- 查看 TCP 端口占用：
+  `sudo lsof -i tcp:{{端口}}`
 
-- 查看指定文件被哪个进程占用
-  ```shell
-  lsof /path/to/file
-  ```
+- 查看指定用户打开的文件：
+  `lsof -u {{用户名}}`
+
+- 查看指定文件被哪个进程占用：
+  `lsof {{文件路径}}`
+
+- 查看指定进程打开的文件：
+  `lsof -p {{PID}}`
+
+- 查看指定命令打开的文件：
+  `lsof -c {{命令名}}`
+
+- 查看所有网络连接：
+  `sudo lsof -i`
+
+- 杀死占用指定端口的进程：
+  `kill -9 $(lsof -t -i :{{端口}})`

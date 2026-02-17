@@ -1,26 +1,28 @@
 # rsync
 
-> 快速、多功能甚至远程的文件复制工具。
+> 快速、多功能的文件复制和同步工具。
+> 更多信息：<https://manned.org/rsync>
 
-- 常用同步命令
-  ```shell
-  rsync [option] src dst
+- 同步本地目录（归档模式）：
+  `rsync -av {{源目录/}} {{目标目录/}}`
 
-  # 常用选项:
-  # -a: archive，归档模式，通常是必用的 (等于 -rlptgoD)
-  # -v: verbose，显示详细信息
-  # -z: 压缩传输
-  # -r: 递归同步
-  # -u: update，仅更新较新的文件
-  # --progress: 显示进度
-  ```
+- 通过 SSH 同步到远程服务器：
+  `rsync -avz {{源目录/}} {{用户@主机:目标目录/}}`
 
-- 通过 SSH 同步并删除目标端多余文件
-  ```shell
-  rsync -avz --delete -e ssh src/ user@host:dst/
-  ```
+- 通过 SSH 从远程服务器同步：
+  `rsync -avz {{用户@主机:源目录/}} {{目标目录/}}`
 
-- 排除指定文件
-  ```shell
-  rsync -av --exclude "*.tmp" src/ dst/
-  ```
+- 同步并删除目标端多余文件：
+  `rsync -avz --delete {{源目录/}} {{目标目录/}}`
+
+- 显示同步进度：
+  `rsync -avz --progress {{源目录/}} {{目标目录/}}`
+
+- 排除指定文件：
+  `rsync -av --exclude "{{*.tmp}}" {{源目录/}} {{目标目录/}}`
+
+- 只更新较新的文件：
+  `rsync -avu {{源目录/}} {{目标目录/}}`
+
+- 使用压缩传输：
+  `rsync -avz {{源目录/}} {{目标目录/}}`
