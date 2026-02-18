@@ -48,6 +48,13 @@ npm list -g --depth=0
 
 # 登录 npm
 npm login
+
+# 查看依赖包元数据信息
+npm view @sveltejs/kit
+npm view @sveltejs/kit version
+npm view @sveltejs/kit versions
+npm view @sveltejs/kit homepage
+npm view @sveltejs/kit liicense
 ```
 
 ## Bun as a Package Manager
