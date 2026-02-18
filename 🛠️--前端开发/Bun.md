@@ -9,7 +9,6 @@ npm root
 npm root -g
 
 # 安装所有项目依赖
-npm i
 npm install
 
 # 安装指定项目依赖
@@ -37,15 +36,15 @@ npm config set registry https://registry.npm.taobao.org
 # 打开 npm 配置文件
 npm config edit
 
-# 查看全局安装的包，且不显示依赖树
-npm list -g --depth=0
-
 # 查看缓存路径
 npm config get cache
 # 查看缓存状态
 npm cache verify
 # 清除所有 npm 缓存，注意，npm 通常能够自我管理缓存
 npm cache clean --force
+
+# 查看全局安装的包，且不显示依赖树
+npm list -g --depth=0
 
 # 登录 npm
 npm login
@@ -79,14 +78,11 @@ bun update --latest
 # 更新指定项目依赖
 bun update PACKAGE
 
-# 查看过期依赖
+# 查看过时依赖
 bun outdated
 
-# 查看项目缓存
+# 查看缓存
 bun pm cache
-
-# 查看全局缓存
-bun pm cache -g
 
 # 清理缓存
 bun pm cache rm
@@ -95,14 +91,13 @@ bun pm cache rm
 bun pm ls -g
 
 # 查看全局二进制文件路径
-bun pm bun -g
+bun pm bin -g
 ```
 
 ## Bun as a Runtime
 
 ```sh
 # 运行 JS/TS 文件
-# 原生支持 TS，无需编译
 bun run index.ts
 
 # 监听文件变化自动重启
