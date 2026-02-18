@@ -37,6 +37,11 @@ npm config set registry https://registry.npm.taobao.org
 # 打开 npm 配置文件
 npm config edit
 
+# 查看全局安装的包，且不显示依赖树
+npm list -g --depth=0
+
+# 查看缓存路径
+npm config get cache
 # 查看缓存状态
 npm cache verify
 # 清除所有 npm 缓存，注意，npm 通常能够自我管理缓存
@@ -76,6 +81,21 @@ bun update PACKAGE
 
 # 查看过期依赖
 bun outdated
+
+# 查看项目缓存
+bun pm cache
+
+# 查看全局缓存
+bun pm cache -g
+
+# 清理缓存
+bun pm cache rm
+
+# 查看全局安装的包
+bun pm ls -g
+
+# 查看全局二进制文件路径
+bun pm bun -g
 ```
 
 ## Bun as a Runtime
