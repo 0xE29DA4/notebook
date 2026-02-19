@@ -6,8 +6,8 @@ PS: remember to reload ssh service after editing configuration
 
 > user config in: `~/.ssh`
 
-- id_rsa/id_ed25519: 私钥
-- id_rsa_pub/id_ed25519.pub: 公钥
+- id_ed25519: 私钥
+- id_ed25519.pub: 公钥
 - authorized_keys: 存放公钥，允许这些公钥登录当前用户
 - config: 用户级 SSH 客户端配置
 - known_hosts: 记录了曾经连接过的 SSH 服务器的公钥指纹
@@ -70,7 +70,7 @@ X11Forwarding no                     # 允许 X11 转发
 AllowTcpForwarding yes               # 是否允许端口转发
 ```
 
-## 登录
+## 连接
 
 ```sh
 # 使用私钥登录
