@@ -27,6 +27,12 @@
 - 发送文件上传请求：
   `curl -F "file=@{{文件路径}}" {{URL}}`
 
+- 发送表单：
+  `curl -F "data: 666" {{URL}}`
+
+- 发送文件，从 stdin 获取文件输入
+  `curl -F "file=@-;filename=stdin.txt" -T - https://example.com/upload`
+
 - 静默模式（不显示进度）：
   `curl -s {{URL}}`
 
