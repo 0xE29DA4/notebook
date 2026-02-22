@@ -61,6 +61,8 @@ git log                           # 查看日志
 git remote                                                        # 查看远程仓库
 git remote -v                                                     # 查看远程仓库的详细信息
 git remote add origin REMOTE_REPO_URL                             # 关联远程仓库
+# 修改关联远程仓库
+git remote set-url origin REMOTE_REPO_URL
 ```
 
 ## 推送到远端
