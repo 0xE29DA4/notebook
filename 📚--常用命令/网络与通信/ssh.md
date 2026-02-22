@@ -98,6 +98,8 @@ ssh mizu@192.168.1.100 'nohup myscript.sh &'
 ssh-keygen -t ed25519 -C "COMMENT"
 # 清除某个主机的密钥
 ssh-keygen -R HOST
+# 计算密钥指纹
+ssh-keygen -l -E sha256 -f ~/.ssh/id_ed25519.pub
 ```
 
 ### ssh-copy-id
@@ -108,6 +110,17 @@ ssh-keygen -R HOST
 ssh-copy-id USER@IP
 # 如果公钥不是默认名称或默认路径，需要指定路径
 ssh-copy-id -i 公钥路径 USER@IP
+```
+
+### ssh-keyscan
+
+```sh
+# 扫描主机公钥
+ssh-keyscan HOST
+# 扫描多个主机（逗号分隔或空格）
+ssh-keyscan 100.111.111.11 vpn.chamomile.icu example.com
+# 扫描并追加到 known_hosts
+ssh-keyscan HOST >> ~/.ssh/known_hosts
 ```
 
 ## scp
