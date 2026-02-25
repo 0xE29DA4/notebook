@@ -1,13 +1,16 @@
 # patch
 
-> 用于将补丁文件应用到原始文件，从而将其更新为修改后的文件，常与 diff 一起使用。
+> 将补丁文件应用到原始文件。
+> 更多信息：<https://manned.org/patch>
 
-- 应用补丁
-  ```shell
-  patch FILE OPTION < file.patch
-  ```
+- 应用补丁：
+  `patch {{文件名}} < {{补丁文件}}`
 
-- 撤销补丁
-  ```shell
-  patch -R < file.patch
-  ```
+- 撤销补丁：
+  `patch -R < {{补丁文件}}`
+
+- 应用补丁到指定目录：
+  `patch -d {{目录}} < {{补丁文件}}`
+
+- 创建备份后应用补丁：
+  `patch -b {{文件名}} < {{补丁文件}}`

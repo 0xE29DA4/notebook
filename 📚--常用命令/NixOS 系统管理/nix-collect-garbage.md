@@ -1,29 +1,30 @@
 # nix-collect-garbage
 
-> 垃圾回收工具，删除未被使用的 store 路径以释放空间。
+> 删除未被使用的 store 路径以释放空间。
+> 更多信息：<https://nixos.org/manual/nix/stable/command-ref/nix-collect-garbage`
 
-- **删除超过 30 天的旧生成**
-  ```shell
-  sudo nix-collect-garbage --delete-older-than 30d
-  ```
+- 删除超过指定天数的旧生成：
+  `sudo nix-collect-garbage --delete-older-than {{30d}}`
 
-- **激进清理 (删除所有历史生成，仅保留当前)**
-  ```shell
-  sudo nix-collect-garbage -d
-  ```
+- 激进清理（删除所有历史生成，仅保留当前）：
+  `sudo nix-collect-garbage -d`
 
-- **硬链接优化 (去重)**
-  ```shell
-  nix-store --optimise
-  ```
+- 删除所有未被引用的 store 路径：
+  `nix-collect-garbage`
 
----
+- 硬链接优化（去重）：
+  `nix-store --optimise`
 
-### 现代推荐方案: `nh clean`
+# nh clean
 
-如果你安装了 [nh](nh.md)，可以使用更平衡的清理策略：
+> nh 提供的更智能的清理工具。
+> 更多信息：<https://github.com/viperML/nh>
 
-- **根据保留生成的数量清理**
-  ```shell
-  nh clean all --keep 5
-  ```
+- 根据保留生成的数量清理：
+  `nh clean all --keep {{5}}`
+
+- 清理指定用户配置：
+  `nh clean user --keep {{3}}`
+
+- 清理系统配置：
+  `nh clean system --keep {{5}}`

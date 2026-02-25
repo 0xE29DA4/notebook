@@ -1,21 +1,16 @@
 # expr
 
 > 表达式计算工具。
+> 更多信息：<https://manned.org/expr>
 
-- 数值计算 (注意转义)
-  ```shell
-  expr 5 + 5
-  expr 5 \* 5
-  expr 10 \> 1
-  ```
+- 数值计算：
+  `expr {{数值1}} + {{数值2}}`
 
-- 统计字符串长度
-  ```shell
-  expr length "hello world"
-  ```
+- 乘法运算（需要转义）：
+  `expr {{数值1}} \* {{数值2}}`
 
-- 模式匹配
-  ```shell
-  # 统计串长度，如果不以 jpg 为后缀返回 0
-  expr "image.jpg" : ".*\.jpg"
-  ```
+- 统计字符串长度：
+  `expr length "{{字符串}}"`
+
+- 模式匹配：
+  `expr "{{字符串}}" : "{{正则表达式}}"`

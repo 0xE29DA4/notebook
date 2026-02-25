@@ -1,28 +1,19 @@
 # readelf
 
-> 用于显示 ELF (Executable and Linkable Format) 文件的信息。
+> 显示 ELF（Executable and Linkable Format）文件的信息。
+> 更多信息：<https://manned.org/readelf>
 
-- 查看文件头信息
-  ```shell
-  readelf -h file
-  ```
+- 查看文件头信息：
+  `readelf -h {{文件名}}`
 
-- 查看所有信息
-  ```shell
-  readelf -a file
-  ```
+- 查看所有信息：
+  `readelf -a {{文件名}}`
 
-- 查看段头表 (Program Headers)
-  ```shell
-  readelf -l file
-  ```
+- 查看段头表（Program Headers）：
+  `readelf -l {{文件名}}`
 
-- 查看节头表 (Section Headers)
-  ```shell
-  readelf -S file
-  ```
+- 查看节头表（Section Headers）：
+  `readelf -S {{文件名}}`
 
-- 查看符号表 (Symbols)
-  ```shell
-  readelf -s file
-  ```
+- 查看符号表（Symbols）：
+  `readelf -s {{文件名}}`

@@ -1,15 +1,13 @@
 # type
 
-> 显示命令的类型 (alias, keyword, function, builtin, file)。
+> 显示命令的类型（alias, keyword, function, builtin, file）。
+> 更多信息：<https://manned.org/type>
 
-- 查看 ls 是什么
-  ```shell
-  type ls
-  # ls is aliased to `ls --color=auto`
-  ```
+- 显示命令类型：
+  `type {{命令名}}`
 
-- 查看 cd 是什么
-  ```shell
-  type cd
-  # cd is a shell builtin
-  ```
+- 显示所有匹配项：
+  `type -a {{命令名}}`
+
+- 只显示文件类型：
+  `type -t {{命令名}}`

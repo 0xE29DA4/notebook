@@ -218,7 +218,7 @@ zcard K
 
 ## 安全
 
-```shell
+```sh
 # 编辑 redis.conf，修改 requirepass
 
 # 重启 redis 服务

@@ -116,7 +116,7 @@ ELF 文件格式：
 	- readelf -h hello.o
 - ...
 
-```shell
+```sh
 # 读取 hello.o 中的 header 信息
 readelf -h hello.o
 
@@ -144,7 +144,7 @@ objdump -S hello.o
 
 ##### 交叉编译例子
 
-```shell
+```sh
 riscv64-unknown-elf-gcc \
 -march=rv32ima \  # 指定目标指令集架构
 -mabi=ilp32 \
@@ -160,7 +160,7 @@ QEMU 有两种主要运作模式
 
 ##### usermode
 
-```shell
+```sh
 # 直接运行交叉编译生成的 a.out
 qemu-riscv32 ./a.out
 ```
