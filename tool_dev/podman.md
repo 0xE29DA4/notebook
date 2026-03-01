@@ -25,8 +25,10 @@ podman pull name:version
 ```sh
 # 查看本地镜像
 podman images
-podman images -a # 显示所有镜像
-podman images -q # 只显示镜像 id
+-a # 显示所有镜像
+podman images
+# 只显示镜像 id
+podman images -q
 
 # 删除镜像
 podman image rm [name:version|id]
@@ -105,7 +107,7 @@ podman status [name|id]
 podman inspect [name|id]
 # 启动容器
 podman start [name|id]
-# 重启容器 
+# 重启容器
 podman restart [name|id]
 # 暂停容器
 podman stop [name|id]
@@ -231,7 +233,7 @@ networks:
 
 ```sh
 # 指定使用 compose.yaml，在后台上线一个应用
-podman-compose -f compose.yaml up -d 
+podman-compose -f compose.yaml up -d
 # 下线一个应用
 podman-compose -f compose.yaml down
 # 列出所有启动的容器
@@ -256,7 +258,7 @@ podman-compose -f compose.yaml exec -it [name|id] bash
 
 ### 编写 Rust Web Server 代码
 
-创建 Rust 项目：`cargo new hello-rust-server`  
+创建 Rust 项目：`cargo new hello-rust-server`
 进入项目目录：`cd hello-rust-server`
 
 Cargo.toml
@@ -370,7 +372,7 @@ CMD ["/bin/hello-rust-server"]
 
 ### 构建镜像
 
-在 `Dockerfile` 所在的目录下，运行 `podman build` 命令来构建镜像  
+在 `Dockerfile` 所在的目录下，运行 `podman build` 命令来构建镜像
 -t: tag your image
 
 ```sh
