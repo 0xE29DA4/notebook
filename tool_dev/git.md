@@ -160,6 +160,8 @@ git push REMOTE_HOST LOCAL_BRANCH:REMOTE_BRANCH
 git push REMOTE_HOST LOCAL_BRANCH
 # 强制 push
 git push --force REMOTE_HOST LOCAL_BRANCH
+# 只有当远程分支没有被别人更新时才允许 force
+git push --force-with-lease
 # 将标签推送到远程仓库
 git push REMOTE_HOST TAG_NAME
 ```
