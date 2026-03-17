@@ -79,12 +79,14 @@ ssh -i 私钥 USER@IP
 ssh -i 私钥 USER@IP -T
 # 指定端口
 ssh -p 2222 USER@IP
-# 使用跳板机
+# 跳板机转发
 ssh -J JUMP_USER@JUMP_HOST TARGET_USER@TARGET_HOST
 # 本地端口转发
 ssh -L 7890:localhost:7890 mizu@192.168.1.100
 # 远程端口转发
 ssh -R 7890:localhost:7890 mizu@192.168.1.100
+# 动态端口转发
+ssh -D 7890 mizu@192.168.1.100
 # 后台执行命令
 ssh mizu@192.168.1.100 'nohup myscript.sh &'
 ```
