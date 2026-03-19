@@ -1,13 +1,6 @@
----
-title: Notebook
-description: 自用笔记
----
-
-## 欢迎
+# 欢迎
 
 Hello, world!
-
----
 
 ## 💻 开发笔记
 
