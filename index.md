@@ -8,18 +8,18 @@ Hello, world!
 
 ### 后端开发
 
-- [PostgreSQL](dev_backend/postgres.md) - PostgreSQL 数据库配置与使用
-- [Redis](dev_backend/redis.md) - Redis 内存数据库配置与使用
+- [PostgreSQL](dev_backend/postgres) - PostgreSQL 数据库配置与使用
+- [Redis](dev_backend/redis/index.md) - Redis 内存数据库配置与使用
 
 ### 前端开发
 
-- [Bun](dev_frontend/bun.md) - Bun JavaScript 运行时与工具链
+- [Bun](tool_dev/bun/index.md) - Bun JavaScript 运行时与工具链
 
 ### 硬件开发
 
-- [QEMU](dev_hardware/qemu.md) - QEMU 硬件虚拟化与模拟器
-- [RISC-V](dev_hardware/risc-v.md) - RISC-V 开源指令集架构
-- [STM32](dev_hardware/stm32.md) - STM32 嵌入式开发
+- [QEMU](dev_hardware/qemu/index.md) - QEMU 硬件虚拟化与模拟器
+- [RISC-V](dev_hardware/risc-v/index.md) - RISC-V 开源指令集架构
+- [STM32](dev_hardware/stm32/index.md) - STM32 嵌入式开发
 
 ---
 
@@ -227,17 +227,17 @@ CS 核心课程笔记与知识整理
 - [CMake](tool_toolchain/cmake.md) - 跨平台构建系统
 - [Clang](tool_toolchain/clang.md) - LLVM 编译器前端
 - [GCC](tool_toolchain/gcc.md) - GNU 编译器集合
-- [Makefile](tool_toolchain/makefile.md) - GNU Make 构建脚本
+- [Makefile](tool_toolchain/make.md) - GNU Make 构建脚本
 
 ### 开发工具
 
-- [Git](tool_dev/git.md) - 版本控制系统
-- [Podman](tool_dev/podman.md) - 容器运行时
-- [PyTorch](tool_dev/pytorch.md) - 深度学习框架
+- [Git](tool_dev/git/index.md) - 版本控制系统
+- [Podman](tool_dev/podman/index.md) - 容器运行时
+- [PyTorch](tool_dev/pytorch/index.md) - 深度学习框架
 
 ### 多媒体工具
 
-- [FFmpeg](tool_media/ffmpeg.md) - 音视频处理工具
+- [FFmpeg](tool_media/ffmpeg/index.md) - 音视频处理工具
 
 ---
 
