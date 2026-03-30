@@ -1,199 +1,217 @@
 # PostgreSQL
 
-## [PSQL](psql.md)
+## [[psql]]
 
-## TMP
+PSQL is a client of Postgres.
 
-List All Database(using pg_catalog)
+## [[metadata]]
 
-```sql
-SELECT datname
-FROM pg_catalog.pg_database;
-```
+Manage cluster metadata.
 
-List All
+## [[data_types]]
 
-List all schemas
+Show types supported in Postgres.
 
-```sql
-SELECT schema_name
-FROM information_schema.schemata;
-```
-
-## [Data Type](data_type.md)
-
-## 数据库操作
+## Database Manipulation
 
 ```sql
--- 创建数据库
+-- create a databse
 CREATE DATABASE mydb;
--- 创建数据库（如果不存在）
+-- savely
 CREATE DATABASE IF NOT EXISTS mydb;
--- 创建数据库时指定编码
+-- specify encoding
 CREATE DATABASE mydb WITH ENCODING 'UTF8';
--- 删除数据库
+
+-- drop a database
 DROP DATABASE mydb;
--- 删除可能不存在的数据库
+-- savely
 DROP DATABASE IF EXISTS mydb;
--- 显示当前数据库
+
+-- show current database
 SELECT current_database();
--- 列出所有数据库
-\l              -- psql 命令
-SELECT datname FROM pg_database;
--- 切换数据库（psql）
-\c mydb
 ```
 
-## 表操作
+## Table Manipulation
 
 ```sql
--- 建表示例
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,              -- 自增主键
+-- create a table
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     email TEXT NOT NULL,
     age INTEGER CHECK (age > 0 AND age < 150),
     status CHAR(1) DEFAULT 'A',
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
--- 使用 IDENTITY（SQL 标准，推荐）
-CREATE TABLE users (
-    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    username VARCHAR(50) NOT NULL
+
+-- better to use the following statement rather than 'SERIAL' 
+CREATE TABLE users(
+    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 );
--- 添加表注释
-COMMENT ON TABLE users IS '用户表';
--- 添加列注释
-COMMENT ON COLUMN users.username IS '用户名';
--- 修改表名
+
+-- add table-level comment
+COMMENT ON TABLE users IS 'the user table';
+-- add column-level comment
+COMMENT ON COLUMN users.username IS 'user full name';
+
+-- alter table name
 ALTER TABLE users RENAME TO members;
--- 列出当前 schema 的所有表
-\dt             -- psql 命令
-SELECT table_name FROM information_schema.tables
-WHERE table_schema = 'public';
--- 查看表结构
-\d users        -- psql 命令
-SELECT column_name, data_type, is_nullable
-FROM information_schema.columns
-WHERE table_name = 'users';
--- 清空表（重置序列）
+
+-- truncate table
+TRUNCATE TABLE users;
+-- truncate table and reset any related sequence object.
 TRUNCATE TABLE users RESTART IDENTITY;
--- 删除表
+
+-- drop table
 DROP TABLE users;
-DROP TABLE IF EXISTS users CASCADE;  -- 级联删除依赖对象
+-- cascade drop table
+DROP TABLE IF EXISTS users CASCADE;
 ```
 
-## 字段操作
+## Column Manipulation
 
 ```sql
--- 添加字段
-ALTER TABLE users ADD COLUMN phone VARCHAR(20);
--- 删除字段
+-- add column
+ALTER TABLE users ADD COLUMN phone VARCHAR(32);
+-- drop column
 ALTER TABLE users DROP COLUMN phone;
--- 修改字段类型
+
+-- modify column type
 ALTER TABLE users ALTER COLUMN phone TYPE TEXT;
--- 重命名字段
-ALTER TABLE users RENAME COLUMN phone TO mobile;
--- 设置/删除默认值
+-- modify column property
 ALTER TABLE users ALTER COLUMN status SET DEFAULT 'A';
 ALTER TABLE users ALTER COLUMN status DROP DEFAULT;
--- 设置/删除 NOT NULL
 ALTER TABLE users ALTER COLUMN email SET NOT NULL;
 ALTER TABLE users ALTER COLUMN email DROP NOT NULL;
+-- rename column
+ALTER TABLE users RENAME COLUMN phone TO mobile;
 ```
 
-## 数据操作 (DML)
+## Data Manipulation Language
+
+### Insert Data
 
 ```sql
--- 插入数据
+-- insert data
 INSERT INTO users (username, email) VALUES ('alice', 'alice@example.com');
--- 批量插入
+-- batch insert
 INSERT INTO users (username, email) VALUES
     ('bob', 'bob@example.com'),
     ('charlie', 'charlie@example.com');
--- 插入并返回生成的 ID（PostgreSQL 特有）
+-- insert and return some fields（Postgres only）
 INSERT INTO users (username, email)
 VALUES ('dave', 'dave@example.com')
-RETURNING id;
--- 插入子查询结果
-INSERT INTO users_backup SELECT * FROM users WHERE status = 'A';
--- 更新数据
-UPDATE users SET status = 'I' WHERE id = 1;
--- 更新并返回结果
-UPDATE users SET email = 'new@example.com'
+RETURNING id, email;
+-- insert the result of a subquery
+INSERT INTO users_backup
+SELECT * FROM users WHERE id = 1;
+```
+
+### Update Data
+
+```sql
+-- update 
+UPDATE users
+SET email = 'bar@example.com'
+WHERE id = 1;
+-- update and return the result
+UPDATE users
+SET email = 'new@example.com'
 WHERE id = 1
 RETURNING *;
--- 删除数据
-DELETE FROM users WHERE id = 1;
--- 删除并返回
-DELETE FROM users WHERE status = 'I' RETURNING id;
--- UPSERT（插入或更新）
+```
+
+### Upsert Data
+
+```sql
+-- upsert
+-- if a conflict occurs, specified fields will be overwritten
 INSERT INTO users (id, username, email)
-VALUES (1, 'alice', 'alice@new.com')
+VALUES (1, 'foo', 'foo@example.com')
 ON CONFLICT (id) DO UPDATE SET email = EXCLUDED.email;
--- UPSERT（插入或忽略）
+-- upsert
+-- if a conflict occurs, do nothing
 INSERT INTO users (username, email)
-VALUES ('alice', 'alice@example.com')
+VALUES ('foo', 'foo@example.com')
 ON CONFLICT DO NOTHING;
 ```
 
-## 查询操作
+### Delete Data
 
 ```sql
--- 基本查询
-SELECT * FROM users;
-SELECT id, username FROM users WHERE status = 'A';
--- 去重
+DELETE FROM users WHERE id = 1;
+-- delete and return the result
+DELETE FROM users WHERE status = 'I' RETURNING *;
+```
+
+## Data Query
+
+```sql
+-- specify wanted field
+SELECT id, username FROM users;
+
+-- filter after scanning users
+SELECT * FROM users WHERE status = 'A';
+
+-- deduplication
 SELECT DISTINCT status FROM users;
--- 排序
+
+-- sort
 SELECT * FROM users ORDER BY created_at DESC;
--- 分页（LIMIT + OFFSET）
-SELECT * FROM users LIMIT 10 OFFSET 20;  -- 第 3 页，每页 10 条
--- 模式匹配
-SELECT * FROM users WHERE username LIKE 'a%';      -- 以 a 开头
-SELECT * FROM users WHERE username LIKE '__';      -- 恰好两个字符
-SELECT * FROM users WHERE email ~ '^[a-z]+@';      -- 正则匹配
-SELECT * FROM users WHERE email ~* '^[A-Z]+@';     -- 正则匹配（不区分大小写）
--- IN 操作
+
+-- pagination
+-- example: skip the first 20 rows and return the next 10 rows
+-- alway use ORDER BY: the result order is not guaranteed
+-- performance: avoid large OFFSET in production
+SELECT * FROM users ORDER BY id ASC LIMIT 10 OFFSET 20;
+
+-- pattern matching
+-- start with A
+SELECT * FROM users WHERE username LIKE 'a%';
+-- exactly two characters
+SELECT * FROM users WHERE username LIKE '__';
+-- regex match
+SELECT * FROM users WHERE email ~ '^[a-z]+@';
+-- regex match(ignore case)
+SELECT * FROM users WHERE email ~* '^[A-Z]+@';
+
+-- IN statement
 SELECT * FROM users WHERE status IN ('A', 'B', 'C');
--- BETWEEN
+-- BETWEEN statement
 SELECT * FROM users WHERE age BETWEEN 18 AND 30;
--- CASE WHEN
+-- CASE WHEN statement
 SELECT username,
     CASE status
-        WHEN 'A' THEN '活跃'
-        WHEN 'I' THEN '禁用'
-        ELSE '未知'
+        WHEN 'A' THEN 'active'
+        WHEN 'I' THEN 'inactive'
+        ELSE 'unknown'
     END AS status_text
 FROM users;
 ```
 
-## 索引
+## index
 
 ```sql
--- 创建普通索引
+-- create a common index
 CREATE INDEX idx_users_email ON users(email);
--- 创建唯一索引
+-- create a unique index
 CREATE UNIQUE INDEX idx_users_username ON users(username);
--- 创建复合索引
+-- create a compound index
 CREATE INDEX idx_users_status_created ON users(status, created_at DESC);
--- 创建部分索引（只索引满足条件的行）
+-- create a partial index
 CREATE INDEX idx_active_users ON users(username) WHERE status = 'A';
--- 创建表达式索引
+-- create a expression index
 CREATE INDEX idx_users_lower_email ON users(LOWER(email));
--- 创建 GIN 索引（用于 JSONB、全文搜索、数组）
+-- create a GIN index
 CREATE INDEX idx_users_data ON users USING GIN(data);
--- 删除索引
+-- drop a index
 DROP INDEX idx_users_email;
--- 查看表的索引
-\di users*      -- psql 命令
 ```
 
-## 聚合函数与常用函数
+## Aggregate Functions and Common Functions
 
 ```sql
------------------ 聚合函数
-COUNT(*)         -- 统计行数
+COUNT(*)
 COUNT(DISTINCT col)  -- 去重计数
 SUM(col)         -- 求和
 AVG(col)         -- 平均值
@@ -235,10 +253,10 @@ COALESCE(col1, col2, 'default')  -- 返回第一个非 NULL 值
 NULLIF(a, b)     -- 如果 a = b 返回 NULL，否则返回 a
 ```
 
-## 视图
+## View
 
 ```sql
--- 创建视图
+-- create a view
 CREATE VIEW active_users AS
 SELECT id, username, email
 FROM users
@@ -423,104 +441,125 @@ ALTER TABLE users ADD CONSTRAINT chk_age CHECK (age > 0);
 ALTER TABLE users DROP CONSTRAINT chk_age;
 ```
 
-## 序列 (SEQUENCE)
+## Sequence
 
 ```sql
--- 创建序列
+-- create a sequence
 CREATE SEQUENCE user_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
--- 获取下一个值
+
+-- get next value
 SELECT nextval('user_id_seq');
--- 获取当前值
-SELECT currval('user_id_seq');  -- 需要先调用 nextval
--- 设置序列值
+
+-- get current value
+-- you can only use this function to get the current value if the nextval function has already been called for that sequence
+SELECT currval('user_id_seq');
+
+-- set sequene value
+-- the parameter 'is_called' defaults to true
+-- you get 101 next time
 SELECT setval('user_id_seq', 100);
-SELECT setval('user_id_seq', 100, false);  -- 下次 nextval 返回 100
--- 删除序列
+-- you get 100 next time
+SELECT setval('user_id_seq', 100, false);
+
+-- drop a sequence
 DROP SEQUENCE user_id_seq;
--- 查看所有序列
-\ds     -- psql 命令
 ```
 
-## 用户与权限
+## User and Permissions Management
 
 ```sql
--- 创建用户
+-- create a user
 CREATE USER myuser WITH PASSWORD 'mypassword';
--- 创建角色（可以用于权限分组）
-CREATE ROLE readonly;
--- 授予数据库权限
-GRANT CONNECT ON DATABASE mydb TO myuser;
--- 授予 schema 权限
-GRANT USAGE ON SCHEMA public TO myuser;
--- 授予表权限
-GRANT SELECT, INSERT, UPDATE ON users TO myuser;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser;
--- 授予序列权限（用于 SERIAL 字段）
-GRANT USAGE ON ALL SEQUENCES IN SCHEMA public TO myuser;
--- 撤销权限
-REVOKE INSERT ON users FROM myuser;
--- 设置默认权限（新建对象自动授权）
-ALTER DEFAULT PRIVILEGES IN SCHEMA public
-GRANT SELECT ON TABLES TO readonly;
--- 修改密码
+-- alter user password
 ALTER USER myuser WITH PASSWORD 'newpassword';
--- 删除用户
+-- drop user
 DROP USER myuser;
--- 查看当前用户
-SELECT current_user, session_user;
--- 查看所有用户
-\du     -- psql 命令
-SELECT * FROM pg_user;
--- 查看表权限
-\dp users   -- psql 命令
+-- show current user and session user
+SELECT CURRENT_USER, SESSION_USER;
+
+-- create a role
+CREATE ROLE readonly;
+
+-- grant permissions
+-- grant database permissions to user
+GRANT CONNECT ON DATABASE mydb TO myuser;
+-- grant schema permission to user
+GRANT USAGE ON SCHEMA public TO myuser;
+-- grant table permission to user
+-- fine-grained control
+GRANT SELECT, INSERT, UPDATE ON users TO myuser;
+-- coarse-grained control
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser;
+-- grant sequence permission to user
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA public TO myuser;
+
+-- revoke permission
+REVOKE INSERT ON users FROM myuser;
+
+-- set default permission
+ALTER DEFAULT PRIVILEGES
+IN SCHEMA public
+GRANT SELECT ON TABLES TO readonly;
 ```
 
-## 事务
+## Transcation
 
 ```sql
--- PostgreSQL 默认自动提交，使用 BEGIN 开启显式事务
+-- basic transcation
 BEGIN;
     UPDATE accounts SET balance = balance - 100 WHERE id = 1;
     UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
--- 回滚
+
+-- rollback
+-- no data is actually deleted
 BEGIN;
     DELETE FROM users;
 ROLLBACK;
--- 保存点
+
+-- partial rollback
+-- only 'foo' inserted
 BEGIN;
-    INSERT INTO users (username) VALUES ('alice');
-    SAVEPOINT sp1;
-    INSERT INTO users (username) VALUES ('bob');
-    ROLLBACK TO sp1;  -- 只回滚到保存点，alice 仍存在
+    INSERT INTO users (username) VALUES ('foo');
+    SAVEPOINT sp;
+    INSERT INTO users (username) VALUES ('bar');
+    ROLLBACK TO sp;
 COMMIT;
--- 事务隔离级别
-BEGIN ISOLATION LEVEL READ COMMITTED;      -- 默认
+
+-- isolation level
+-- default
+BEGIN ISOLATION LEVEL READ COMMITTED;
 BEGIN ISOLATION LEVEL REPEATABLE READ;
 BEGIN ISOLATION LEVEL SERIALIZABLE;
--- 查看当前隔离级别
+-- check current isolation level
 SHOW transaction_isolation;
 ```
 
-## Schema（模式）
+## Schema
 
 ```sql
--- Schema 是数据库内的命名空间，用于组织表等对象
--- 创建 schema
+-- create a schema
 CREATE SCHEMA myschema;
--- 在指定 schema 中创建表
-CREATE TABLE myschema.users (id SERIAL PRIMARY KEY);
--- 查看当前 search_path
-SHOW search_path;
--- 设置 search_path
-SET search_path TO myschema, public;
--- 删除 schema
+-- create a table specifying a schema
+CREATE TABLE myschema.users(id SERIAL PRIMARY KEY);
+
+-- drop schema
 DROP SCHEMA myschema CASCADE;
+
+-- search path
+-- show current search path
+SHOW search_path;
+-- set search path(for current session)
+SET search_path TO schema_a, public;
+-- set search path(for user)
+ALTER ROLE myuser SET search_path TO schema_a, public;
+-- set search path(for database)
+ALTER DATABASE mydb SET search_path TO schema_a, public;
 ```
 
 ## JSONB 操作
@@ -548,28 +587,42 @@ SELECT * FROM events WHERE data ?& array['type', 'page'];  -- 所有键存在
 CREATE INDEX idx_events_data ON events USING GIN(data);
 ```
 
-## 扩展 (Extensions)
+## Extensions
 
 ```sql
--- 查看已安装扩展
-\dx     -- psql 命令
+-- show installed extensions
 SELECT * FROM pg_extension;
--- 查看可用扩展
+-- show available extensions 
 SELECT * FROM pg_available_extensions;
--- 安装扩展
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";      -- UUID 生成
-CREATE EXTENSION IF NOT EXISTS "pg_trgm";        -- 模糊搜索
-CREATE EXTENSION IF NOT EXISTS "hstore";         -- 键值对类型
-CREATE EXTENSION IF NOT EXISTS "postgis";        -- 地理信息
--- 使用 UUID
+
+-- install a extension
+-- uuid generation functions
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- key-value store
+CREATE EXTENSION IF NOT EXISTS "hstore";
+-- geospatial data & gis
+CREATE EXTENSION IF NOT EXISTS "postgis";
+-- trigram-based fuzzy text search
+CREATE EXTENSION IF NOT EXISTS "pg_trgm";
+-- automatically logs slow queries with execution plans
+CREATE EXTENSION IF NOT EXISTS "auto_explain";
+-- tracks query performance and execution statistics
+CREATE EXTENSION IF NOT EXISTS "pg_stat_statements";
+-- vector similarity search
+CREATE EXTENSION IF NOT EXISTS "pg_vector";
+
+-- update a extension
+ALTER EXTENSION ext_name UPDATE;
+
+-- generate uuid
 SELECT uuid_generate_v4();
--- 使用 pg_trgm 进行模糊搜索
+-- perform fuzzy search using pg_trgm
 SELECT * FROM users
-WHERE username % 'alice'  -- 相似度匹配
+WHERE username % 'alice'
 ORDER BY similarity(username, 'alice') DESC;
 ```
 
-## 维护命令
+## DBMS Maintenance
 
 ```sql
 -- VACUUM：回收死元组空间
@@ -592,7 +645,7 @@ SELECT pg_terminate_backend(pid) FROM pg_stat_activity
 WHERE datname = 'mydb' AND pid <> pg_backend_pid();
 ```
 
-## pg_hba.conf 访问控制
+## Acces Control using pg_hba.conf
 
 PostgreSQL 使用 `pg_hba.conf` 文件控制客户端访问（而非 MySQL 的 `user@host` 格式）：
 
