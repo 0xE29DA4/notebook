@@ -6,4 +6,6 @@
 ssh-copy-id USER@IP
 # 如果公钥不是默认名称或默认路径，需要指定路径
 ssh-copy-id -i 公钥路径 USER@IP
+# use a none-default port
+ssh-copy-id -p 2222 USER@IP
 ```
