@@ -1,46 +1,46 @@
-# UV - Python 包管理器
+# uv
 
-UV 是高性能的 Python 包管理器，设计用于替代 pip 和 pip-tools。
+uv is a high-performance Python package manager designed as a replacement for pip and pip-tools.
 
-## 安装 UV
+## Installation
 
 ```bash
 curl -LsSf 'https://astral.sh/uv/install.sh' | sh
 ```
 
-## 常用命令
+### Virtual Environment
 
-### 安装包
+```bash
+# creat a virtual environment
+uv venv
+```
+
+## uv pip
 
 ```bash
 uv pip install pandas
-```
-
-### 从 requirements.txt 安装
-
-```bash
 uv pip install -r requirements.txt
-```
-
-### 生成 requirements.txt
-
-```bash
 uv pip freeze > requirements.txt
-```
-
-### 卸载包
-
-```bash
 uv pip uninstall pandas
+uv pip install --upgrade package_name
 ```
 
-### 创建虚拟环境
+## uv python
 
-```bash
-uv venv .venv
+> Manage uv python interpreter
+
+```sh
+uv python list
+uv python install 3.13
+uv python uninstall 3.13
+# pin project python version
+uv python pin 3.13
 ```
 
-## 性能优势
+## uv run
 
-- 比 pip 快 10-100 倍
-- 支持并发下载和缓存优化
+> run Python scripts using uv
+
+```sh
+uv run main.py
+```

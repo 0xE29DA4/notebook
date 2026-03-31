@@ -1,22 +1,26 @@
 # Redis
 
-## 数据类型
+## What is Redis
+
+Remote Dictionary Service
+
+## Data Types
 
 - string
 - hash
 - list
 - set
-- zset(sorted set)
+- zset
 - HyperLogLog
 - Bitmap
-- Bloom Filter(布隆过滤器)
-- Geospatial(地理位置)
+- Bloom Filter
+- Geospatial
 - Module
 - Streams
 
 ## string
 
-```redis
+```redis-cli
 使用 set key 设置数据
 如果同名数据存在则覆盖
 set name hu
@@ -199,7 +203,7 @@ zrevrank K a
 zcard K
 ```
 
-## 全局命令
+## redis-cli command
 
 | 命令                 | 功能                          | 案例                |
 | ------------------ | --------------------------- | ----------------- |
@@ -306,7 +310,7 @@ maxmemory-policy
 	- 挑选 ttl 短的淘汰
 - 随即淘汰算法
 
-## 过期 key 处理
+## 内容过期策略
 
 3 种方案
 
