@@ -27,8 +27,5 @@
 - 重新加载 systemd 配置：
   `systemctl daemon-reload`
 
-- 查看服务日志：
-  `journalctl -u {{服务名}}`
-
 - 查看服务是否开机自启：
   `systemctl is-enabled {{服务名}}`

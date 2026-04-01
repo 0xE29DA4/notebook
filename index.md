@@ -210,7 +210,7 @@ CS 核心课程笔记与知识整理
 - [gdb](tool_cli/dev_tools_and_debugging/gdb.md) - GNU 调试器
 - [ldd](tool_cli/dev_tools_and_debugging/ldd.md) - 列出动态库依赖
 - [nm](tool_cli/dev_tools_and_debugging/nm.md) - 列出符号表
-- [openssl](tool_cli/dev_tools_and_debugging/openssl.md) - OpenSSL 工具集
+- [openssl](tool_dev/openssl/index.md) - OpenSSL 工具集
 - [readelf](tool_cli/dev_tools_and_debugging/readelf.md) - 显示 ELF 信息
 - [strace](tool_cli/dev_tools_and_debugging/strace.md) - 系统调用追踪
 

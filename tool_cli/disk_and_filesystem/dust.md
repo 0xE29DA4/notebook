@@ -12,12 +12,6 @@
 - 限制显示深度：
   `dust --depth {{N}}`
 
-- 显示所有文件（包括隐藏文件）：
-  `dust --all`
-
-- 按文件数量而非大小显示：
-  `dust --files`
-
 - 只显示前 N 个最大的目录/文件：
   `dust --number-of-lines {{N}}`
 

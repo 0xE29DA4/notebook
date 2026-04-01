@@ -16,16 +16,16 @@
   `lscpu | grep "CPU(s):"`
 
 - 显示核心数量：
-  `lscpu | grep "Core(s)"
+  `lscpu | grep "Core(s)"`
 
 - 显示线程数量：
-  `lscpu | grep "Thread(s)"
+  `lscpu | grep "Thread(s)"`
 
 - 显示 CPU 架构：
   `lscpu | grep "Architecture"`
 
 - 显示 CPU 运行模式：
-  `lscpu | grep "CPU op-mode(s)"
+  `lscpu | grep "CPU op-mode(s)"`
 
 - 显示字节序：
   `lscpu | grep "Byte Order"`
@@ -40,37 +40,37 @@
   `lscpu | grep "Stepping"`
 
 - 显示 CPU 主频：
-  `lscpu | grep "CPU MHz"
+  `lscpu | grep "CPU MHz"`
 
 - 显示最大主频：
-  `lscpu | grep "CPU max MHz"
+  `lscpu | grep "CPU max MHz"`
 
 - 显示最小主频：
-  `lscpu | grep "CPU min MHz"
+  `lscpu | grep "CPU min MHz"`
 
 - 显示缓存大小：
-  `lscpu | grep "Cache"
+  `lscpu | grep "Cache"`
 
 - 显示 L1 缓存信息：
-  `lscpu | grep "L1d"
+  `lscpu | grep "L1d"`
 
 - 显示 L2 缓存信息：
-  `lscpu | grep "L2"
+  `lscpu | grep "L2"`
 
 - 显示 L3 缓存信息：
-  `lscpu | grep "L3"
+  `lscpu | grep "L3"`
 
 - 显示 NUMA 节点信息：
-  `lscpu | grep "NUMA node(s)"
+  `lscpu | grep "NUMA node(s)"`
 
 - 显示虚拟化支持：
-  `lscpu | grep "Virtualization"
+  `lscpu | grep "Virtualization"`
 
 - 显示超线程状态：
-  `lscpu | grep "Hyper-threading"
+  `lscpu | grep "Hyper-threading"`
 
 - 显示 CPU 特性标志：
-  `lscpu | grep "Flags"
+  `lscpu | grep "Flags"`
 
 - 显示特定 CPU 核心的信息：
   `lscpu -p {{核心号}}`
@@ -79,10 +79,10 @@
   `lscpu --parse=CPU,Core,Socket`
 
 - 显示 CPU 的物理 ID：
-  `lscpu | grep "Physical ID"
+  `lscpu | grep "Physical ID"`
 
 - 显示套接字数量：
-  `lscpu | grep "Socket(s)"
+  `lscpu | grep "Socket(s)"`
 
 - 显示 NUMA 节点的 CPU 分布：
   `lscpu --parse=NUMA_NODE`
@@ -100,13 +100,13 @@
   `lscpu --cache`
 
 - 显示 CPU 的虚拟化特性：
-  `lscpu | grep -i "virt"
+  `lscpu | grep -i "virt"`
 
 - 显示 CPU 的安全特性：
-  `lscpu | grep -i "security"
+  `lscpu | grep -i "security"`
 
 - 显示 CPU 的大小端信息：
-  `lscpu | grep -i "endian"
+  `lscpu | grep -i "endian"`
 
 - 显示 CPU 的型号名称：
   `lscpu | grep "Model name" | cut -d: -f2 | sed 's/^[ \t]*//'`
@@ -127,13 +127,13 @@
   `lscpu | grep -E "(CPU max MHz|CPU min MHz|CPU MHz)"`
 
 - 显示 CPU 的物理特性：
-  `lscpu | grep -E "(BogoMIPS|Hypervisor)"
+  `lscpu | grep -E "(BogoMIPS|Hypervisor)"`
 
 - 显示 CPU 的 NUMA 拓扑：
   `lscpu --parse=NUMA_NODE,CPU`
 
 - 显示 CPU 的功耗管理特性：
-  `lscpu | grep -i "power"
+  `lscpu | grep -i "power"`
 
 - 检查是否支持 AES 指令：
   `lscpu | grep "Flags" | grep -q "aes" && echo "AES supported" || echo "AES not supported"`

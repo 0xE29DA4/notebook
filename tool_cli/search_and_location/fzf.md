@@ -27,3 +27,11 @@
 - 对不匹配 pyc 且完全匹配 travis 的条目启动 `fzf`：
 
 `fzf {{[-q|--query]}} '!pyc travis'`
+
+- better frontend
+
+`fzf --multi --height 40% --layout=reverse --border`
+
+- remember the config above
+
+`export FZF_DEFAULT_OPTS='--multi --height 40% --layout=reverse --border --preview "bat --color=always {}"'`
