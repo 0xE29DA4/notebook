@@ -1,7 +1,7 @@
 # export
 
 > 设置环境变量，使其在子 Shell 中也有效。
-> 更多信息：<https://manned.org/export`
+> 更多信息：https://manned.org/export`
 
 - 设置环境变量：
   `export {{变量名}}={{值}}`

@@ -1,16 +1,32 @@
 # expr
 
-> 表达式计算工具。
-> 更多信息：<https://manned.org/expr>
+> Evaluate expressions and manipulate strings.
+> More information: <https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html>.
 
-- 数值计算：
-  `expr {{数值1}} + {{数值2}}`
+- Get the length of a specific string:
 
-- 乘法运算（需要转义）：
-  `expr {{数值1}} \* {{数值2}}`
+`expr length "{{string}}"`
 
-- 统计字符串长度：
-  `expr length "{{字符串}}"`
+- Get the substring of a string with a specific length:
 
-- 模式匹配：
-  `expr "{{字符串}}" : "{{正则表达式}}"`
+`expr substr "{{string}}" {{from}} {{length}}`
+
+- Match a specific substring against an anchored pattern:
+
+`expr match "{{string}}" '{{pattern}}'`
+
+- Get the first char position from a specific set in a string:
+
+`expr index "{{string}}" "{{chars}}"`
+
+- Calculate a specific mathematic expression:
+
+`expr {{expression1}} {{+|-|*|/|%}} {{expression2}}`
+
+- Get the first expression if its value is non-zero and not null otherwise get the second one:
+
+`expr {{expression1}} \| {{expression2}}`
+
+- Get the first expression if both expressions are non-zero and not null otherwise get zero:
+
+`expr {{expression1}} \& {{expression2}}`
