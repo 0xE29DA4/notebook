@@ -1,3 +1,3 @@
-# Hello, world!
+# Index
 
-It turns out it's different.
+Hello, world!
