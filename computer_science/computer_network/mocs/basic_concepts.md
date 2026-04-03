@@ -2,7 +2,6 @@
 
 - Key Concepts
   - [[computer_network_definition]]
-  - [[computer_network_vs_internetwork_vs_the_internet]]
   - [[components_of_computer_network]]
   - [[functions_of_computer_network]]
   - [[switching_techniques]]
@@ -11,3 +10,4 @@
   - [[computer_network_architecture]]
 - Expanded Concepts
   - [[三網與四網]]
+  - [[computer_network_vs_internetwork_vs_the_internet]]
