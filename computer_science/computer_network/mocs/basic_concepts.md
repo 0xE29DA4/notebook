@@ -1,13 +1,13 @@
 # Basic Concepts
 
-- 主要概念
-  - 計算機網路的定義
-  - 計算機網路、互連網與互聯網的區別
-  - 計算機網路的組成
-  - 計算機網路的功能
-  - 交換技術
-  - 計算機網路的分類
-  - 計算機網路的性能指標
-  - 計算機網路體系結
-- 擴展概念
-  - 三網與四網
+- Key Concepts
+  - [[computer_network_definition]]
+  - [[computer_network_vs_internetwork_vs_the_internet]]
+  - [[components_of_computer_network]]
+  - [[functions_of_computer_network]]
+  - [[switching_techniques]]
+  - [[types_of_computer_networks]]
+  - [[computer_network_performance_metrics]]
+  - [[computer_network_architecture]]
+- Expanded Concepts
+  - [[三網與四網]]

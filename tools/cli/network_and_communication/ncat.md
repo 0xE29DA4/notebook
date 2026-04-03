@@ -1,22 +1,37 @@
 # ncat
 
-> Netcat，网络工具中的瑞士军刀。
-> 更多信息：<https://manned.org/ncat>
+> Read, write, redirect, and encrypt data across a network.
+> An alternative implementation of a similar utility called `netcat`/`nc`.
+> More information: <https://nmap.org/ncat/guide/index.html>.
 
-- 监听端口（作为服务器）：
-  `nc -l {{端口}}`
+- listen a port(as server):
 
-- 连接端口（作为客户端）：
-  `nc {{主机}} {{端口}}`
+  `ncat -l {{端口}}`
 
-- 端口扫描：
-  `nc -zv {{主机}} {{起始端口}}-{{结束端口}}`
+- connect a port(as client):
 
-- 传输文件（接收端）：
-  `nc -l {{端口}} > {{文件名}}`
+  `ncat {{主机}} {{端口}}`
 
-- 传输文件（发送端）：
-  `nc {{主机}} {{端口}} < {{文件名}}`
+- File transfer(as sender):
 
-- 保持连接模式：
-  `nc -k -l {{端口}}`
+  `ncat -l {{端口}} > {{文件名}}`
+
+- Fill transfer(as receiver):
+
+  `ncat < {{文件名}} {{主机}} {{端口}}`
+
+- Keep listening:
+
+  `ncat -kl {{端口}}`
+
+- Accept multiple incoming connections on an encrypted channel evading detection of traffic content:
+
+  `ncat --ssl {{[-k|--keep-open]}} {{[-l|--listen]}} {{port}}`
+
+- Connect to an open `ncat` connection over SSL:
+
+  `ncat --ssl {{host}} {{port}}`
+
+- Check connectivity to a remote host on a particular port with timeout:
+
+  `ncat {{[-w|--wait]}} {{seconds}} {{[-vz|--verbose -z]}} {{host}} {{port}}`
