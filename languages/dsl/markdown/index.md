@@ -1,40 +1,49 @@
 # Markdown
 
-## 内联 HTML
+## Inline HTML
 
-<p class="text_red">test</p>
+<p align="center" style="color: pink">Ullamco laboris nisi ut aliquid ex ea commodi consequat.</p>
 
 ## TODO List
 
-- [x] test
-- [x] test
-- [ ] test
+- [x] Item1
+- [x] Item2
+- [ ] Item3
 
-## 字体样式
+## Text Docoration
 
-- ~~delete this~~
+- ~~delete~~
 - *italic*
 - **bold**
 
-## 表格
+## Table
 
-| Item   | Description |
-| :----: | :---------: |
-| test   | test        |
-| test   | test        |
+| Item   | Description  |
+| :----: | :---------:  |
+| Item1  | Description1 |
+| Item2  | Description2 |
 
-## 图片
+## Images
 
-本地图片：
+Reference image resources here, also support network images.
 
 ![image](path/to/image.jpg)
 
-网络图片：
+## Blockquote
 
-![image](https://img0.baidu.com/it/u=113069717,3184817519&fm=253&fmt=auto&app=138&f=JPEG?w=667&h=500)
+> Curabitur blandit tempus ardua ridiculus sed magna.
 
-## 旁注
+> [!note] Cras mattis iudicium purus sit amet fermentum.
 
-学医救不了中国人[^1]
+> [!warning] Curabitur blandit tempus ardua ridiculus sed magna.
 
-[^1]: 出自：鲁迅
+> [!tip] Pellentesque habitant morbi tristique senectus et netus.
+
+> [!caution] Ullamco laboris nisi ut aliquid ex ea commodi consequat.
+
+## Footnodes
+
+I use rust[^1].
+
+[^1]: A language empowering everyone
+to build reliable and efficient software.More information:  <https://rust-lang.org/>

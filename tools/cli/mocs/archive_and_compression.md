@@ -1,6 +1,8 @@
-- [[bzip2]]
-- [[gzip]]
-- [[tar]]
-- [[unzip]]
+# Archive and Compression
+
 - [[xz]]
+- [[gzip]]
+- [[bzip2]]
+- [[tar]]
 - [[zip]]
+- [[unzip]]

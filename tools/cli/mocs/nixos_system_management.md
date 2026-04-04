@@ -1,3 +1,5 @@
+# Nixos System Management
+
 - [[home-manager]]
 - [[nh]]
 - [[nix-collect-garbage]]

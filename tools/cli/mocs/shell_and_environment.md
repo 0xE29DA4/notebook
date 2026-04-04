@@ -1,3 +1,5 @@
+# Shell and Environment
+
 - [[alias]]
 - [[cd]]
 - [[declare]]

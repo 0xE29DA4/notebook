@@ -1,3 +1,5 @@
+# Search and Location
+
 - [[fd]]
 - [[fzf]]
 - [[rg]]

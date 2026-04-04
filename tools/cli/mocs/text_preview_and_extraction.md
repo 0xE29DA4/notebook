@@ -1,3 +1,5 @@
+# Text Preview and Extraction
+
 - [[bat]]
 - [[cat]]
 - [[head]]
@@ -6,3 +8,4 @@
 - [[nl]]
 - [[od]]
 - [[tail]]
+- [[yazi]]
