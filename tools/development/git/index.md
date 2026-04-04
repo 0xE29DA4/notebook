@@ -1,5 +1,25 @@
 # Git
 
+- [Git](#git)
+  - [git config](#git-config)
+  - [git init](#git-init)
+  - [git add](#git-add)
+  - [git rm](#git-rm)
+  - [git clean](#git-clean)
+  - [git reset](#git-reset)
+  - [git restore](#git-restore)
+  - [git commit](#git-commit)
+  - [git status](#git-status)
+  - [git diff](#git-diff)
+  - [git log](#git-log)
+  - [git remote](#git-remote)
+  - [git push](#git-push)
+  - [git pull](#git-pull)
+  - [git branch](#git-branch)
+  - [git checkout](#git-checkout)
+  - [git merge](#git-merge)
+  - [git tag](#git-tag)
+
 ## git config
 
 ```sh

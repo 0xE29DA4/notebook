@@ -1,4 +1,28 @@
-# NVM (Node Version Manager) 使用指南
+# Node Version Manager(NVM)
+
+- [Node Version Manager(NVM)](#node-version-managernvm)
+  - [概述](#概述)
+  - [安装](#安装)
+    - [Linux/macOS](#linuxmacos)
+    - [Windows](#windows)
+  - [基本用法](#基本用法)
+    - [查看可用的 Node.js 版本](#查看可用的-nodejs-版本)
+    - [安装 Node.js 版本](#安装-nodejs-版本)
+    - [切换 Node.js 版本](#切换-nodejs-版本)
+    - [设置默认版本](#设置默认版本)
+  - [高级用法](#高级用法)
+    - [在项目中使用特定版本](#在项目中使用特定版本)
+    - [管理已安装的版本](#管理已安装的版本)
+    - [npm 管理](#npm-管理)
+  - [常用命令速查](#常用命令速查)
+  - [故障排除](#故障排除)
+    - [常见问题](#常见问题)
+    - [环境变量](#环境变量)
+  - [最佳实践](#最佳实践)
+  - [与其他工具的集成](#与其他工具的集成)
+    - [与 IDE 集成](#与-ide-集成)
+    - [与 CI/CD 集成](#与-cicd-集成)
+  - [参考资源](#参考资源)
 
 ## 概述
 
