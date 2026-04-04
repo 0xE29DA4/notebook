@@ -1,0 +1,6 @@
+- [[fd]]
+- [[fzf]]
+- [[rg]]
+- [[whereis]]
+- [[which]]
+- [[zoxide]]
