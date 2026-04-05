@@ -32,9 +32,9 @@
 
 ## 常用的子命令
 
-- [[req]]
-- [[rand]]
-- [[genpkey]]
+- [[openssl_req]]
+- [[openssl_rand]]
+- [[openssl_genpkey]]
 - [[x509]]
 - [[s_client]]
 - [[dgst]]

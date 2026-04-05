@@ -1,5 +1,6 @@
 # Shell and Environment
 
+- [[bash]]
 - [[alias]]
 - [[cd]]
 - [[declare]]
