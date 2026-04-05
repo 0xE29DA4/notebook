@@ -1,7 +1,7 @@
 # less
 
-> 分页显示文件内容。
-> 更多信息：<https://manned.org/less`
+> 分页显示文件内容。  
+> 更多信息：<https://manned.org/less`>
 
 - 查看文件：
   `less {{文件名}}`

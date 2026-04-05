@@ -6,6 +6,8 @@
 - [[column]]
 - [[cut]]
 - [[jq]]
+- [[yq]]
+- [[htmlq]]
 - [[rev]]
 - [[sed]]
 - [[sort]]
@@ -15,4 +17,3 @@
 - [[uniq]]
 - [[wc]]
 - [[xargs]]
-- [[yq]]
