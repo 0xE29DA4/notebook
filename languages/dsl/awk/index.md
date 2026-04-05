@@ -44,6 +44,21 @@ END {
 }
 ```
 
+awk 的基本格式永遠是：
+
+`awk 'pattern { action }' 文件名`
+
+- pattern：決定「這一行要不要處理」。
+- action：決定「如果要處理，要做什麼」。
+- 整個腳本用單引號包起來，避免 shell 誤解。
+- 可以有多組 pattern { action }，awk 會一行一行掃描輸入。
+- pattern 可以省略 → 表示「每一行都處理」。
+- action 可以省略 → 預設動作是 print（印出整行）。
+- 但不能兩個都省略
+- 特殊 pattern：
+  - BEGIN { ... } → 在處理任何一行之前執行一次（常用來印標題、設變數）。
+  - END { ... } → 在處理完所有行之後執行一次（常用來印總計）。
+
 ## 內建變數
 
 | 變數 | 意義 |
@@ -132,6 +147,9 @@ awk '$1 == "user" && $3 > 5000' file.log
 ```shell
 # 印出第 1 欄長度大於 10 的行
 awk 'length($1) > 10' file.txt
+
+# 不含 "foo" 的行（! 是反向）
+awk '!/foo/' file.txt
 
 # 把所有大寫轉小寫
 awk '{print tolower($0)}' file.txt
