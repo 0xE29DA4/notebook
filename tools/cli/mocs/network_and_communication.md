@@ -9,7 +9,6 @@
 - [[ip]]
 - [[mtr]]
 - [[ncat]]
-- [[netstat]]
 - [[networkctl]]
 - [[nmap]]
 - [[nping]]

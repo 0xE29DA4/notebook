@@ -3,3 +3,4 @@
 - [[age]]
 - [[age-keygen]]
 - [[rage]]
+- [[rage-keygen]]

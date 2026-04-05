@@ -1,6 +1,7 @@
 # ls
 
-> 列出目录内容。
+> 列出目录内容。  
+> See also: [[eza]]。  
 > 更多信息：<https://manned.org/ls>
 
 - 每行显示一个文件：

@@ -1,7 +1,7 @@
 # od
 
 > Display file contents in octal, decimal, or hexadecimal format.
-> Optionally display the byte offsets and/or printable representation for each line.   
+> Optionally display the byte offsets and/or printable representation for each line.  
 > See also: `hexyl`, `xxd`, `hexdump`.
 > More information: <https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html>.
 

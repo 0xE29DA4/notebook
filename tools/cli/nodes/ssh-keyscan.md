@@ -1,10 +1,24 @@
 # ssh-keyscan
 
-```sh
-# 扫描主机公钥
-ssh-keyscan HOST
-# 扫描多个主机（逗号分隔或空格）
-ssh-keyscan 100.111.111.11 vpn.chamomile.icu example.com
-# 扫描并追加到 known_hosts
-ssh-keyscan HOST >> ~/.ssh/known_hosts
-```
+> Get the public SSH keys of remote hosts.  
+> More information: <https://man.openbsd.org/ssh-keyscan>.
+
+- Retrieve all public SSH keys of a remote host:
+
+  `ssh-keyscan hostname`
+
+- Retrieve all public SSH keys of mutiple hosts.(seperate using comma or space)
+
+  `ssh-keyscan host1 host2`
+
+- Retrieve all public SSH keys of a remote host listening on a specific port:
+
+  `ssh-keyscan -p port hostname`
+
+- Retrieve certain types of public SSH keys of a remote host:
+
+  `ssh-keyscan -t rsa,dsa,ecdsa,ed25519 hostname`
+
+- Manually update the SSH known_hosts file with the fingerprint of a given host:
+
+  `ssh-keyscan -H hostname >> ~/.ssh/known_hosts`

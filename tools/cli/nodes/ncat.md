@@ -6,32 +6,32 @@
 
 - listen a port(as server):
 
-  `ncat -l {{端口}}`
+  `ncat -l port`
 
 - connect a port(as client):
 
-  `ncat {{主机}} {{端口}}`
+  `ncat 主机 port`
 
 - File transfer(as sender):
 
-  `ncat -l {{端口}} > {{文件名}}`
+  `ncat -l port > 文件名`
 
 - Fill transfer(as receiver):
 
-  `ncat < {{文件名}} {{主机}} {{端口}}`
+  `ncat < 文件名 主机 port`
 
 - Keep listening:
 
-  `ncat -kl {{端口}}`
+  `ncat -kl port`
 
 - Accept multiple incoming connections on an encrypted channel evading detection of traffic content:
 
-  `ncat --ssl {{[-k|--keep-open]}} {{[-l|--listen]}} {{port}}`
+  `ncat --ssl [-k|--keep-open] [-l|--listen] port`
 
 - Connect to an open `ncat` connection over SSL:
 
-  `ncat --ssl {{host}} {{port}}`
+  `ncat --ssl host port`
 
 - Check connectivity to a remote host on a particular port with timeout:
 
-  `ncat {{[-w|--wait]}} {{seconds}} {{[-vz|--verbose -z]}} {{host}} {{port}}`
+  `ncat [-w|--wait] seconds [-vz|--verbose -z] host port`

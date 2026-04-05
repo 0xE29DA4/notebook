@@ -1,6 +1,7 @@
 # xxd
 
 > 将文件转换为十六进制、二进制或八进制格式，也可以反向转换。
+> See alse: [[od]], [[hexdump]].  
 > 更多信息：<https://manned.org/xxd>
 
 - 以十六进制格式显示文件：
