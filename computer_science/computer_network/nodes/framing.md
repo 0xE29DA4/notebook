@@ -8,3 +8,4 @@
   - [[byte_stuffing]]
   - [[bit_stuffing]]
   - [[physical_layer_coding_violations]]
+- [[maximum_transmission_unit]]

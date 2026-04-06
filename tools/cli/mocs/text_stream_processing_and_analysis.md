@@ -17,3 +17,5 @@
 - [[uniq]]
 - [[wc]]
 - [[xargs]]
+- [[paste]]
+- [[join]]

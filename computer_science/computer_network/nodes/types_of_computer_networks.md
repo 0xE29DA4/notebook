@@ -5,8 +5,8 @@
 - 按网络覆盖范围
   - 广域网 WAN
   - 城域网 MAN
-  - 局域网 LAN
-  - 个域网 PAN
+  - [[local_area_network|局域网 LAN]]
+  - [[personal_area_network|个域网 PAN]]
 - 按鏈路類型
   - 广播式网络
   - 点对点网络
