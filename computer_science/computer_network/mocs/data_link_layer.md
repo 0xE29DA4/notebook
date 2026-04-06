@@ -3,7 +3,7 @@
 - Tasks: 基于物理链路，实现相邻节点之间逻辑上无差错的数据链路（逻辑链路）
 - Functions
   - [[Framing]]
-  - Error control
+  - Error Control
   - Flow Control
   - Medium Access Control
   - Reliable Data Transfer
