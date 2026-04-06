@@ -9,13 +9,14 @@
   - [[computer_network_performance_metrics]]
   - [[computer_network_architecture]]
 - Some essential basic concepts of communication principles
-  - Nyquist Theorem
-  - Shannon's Theorem
-  - Encoding and Decoding
-  - Modulation and Demodulation
-  - Baseband Signals
-  - Broadband Signals
-  - Transmission Media
+  - [[explanation_of_basic_terms_in_communication_theory]]
+  - [[nyquist_theorem]]
+  - [[shannons_theorem]]
+  - [[encoding_and_decoding]]
+  - [[modulation_and_demodulation]]
+  - [[baseband_signals]]
+  - [[broadband_signals]]
+  - [[transmission_media]]
 - Expanded Concepts
   - [[三網與四網]]
   - [[computer_network_vs_internetwork_vs_the_internet]]

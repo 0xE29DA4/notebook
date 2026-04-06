@@ -1,6 +1,19 @@
-# Latex
+# Latex Grammar
 
-## 希腊字母表
+- [Latex Grammar](#latex-grammar)
+  - [Greek Alphabet](#greek-alphabet)
+  - [Other](#other)
+  - [Summation, Product, and Integration](#summation-product-and-integration)
+  - [分号、上划线、下划线、向量、根号](#分号上划线下划线向量根号)
+  - [Arithmetic Operators](#arithmetic-operators)
+  - [Delimiter](#delimiter)
+  - [Set](#set)
+  - [Trigonometry](#trigonometry)
+  - [Comparison](#comparison)
+  - [Piecewise Function](#piecewise-function)
+  - [Matrices and Determinants](#matrices-and-determinants)
+
+## Greek Alphabet
 
 | alpha   | beta       | chi      | delta    |
 | ------- | ---------- | -------- | -------- |
@@ -12,71 +25,107 @@
 | digamma | varepsilon | varkappa | varphi   |
 | varpi   | varrho     | varsigma | vartheta |
 
-## 其他符号
+## Other
 
 `\infty` $\infty$
 
-## 连加、连乘、积分
+## Summation, Product, and Integration
 
 `\sum` $\sum$
+
 `\prod` $\prod$
+
 `\int` $\int$
+
 `\oint` $\oint$
+
 `\iint` $\iint$
 
 ## 分号、上划线、下划线、向量、根号
 
 `\frac{a}{b}` $\frac{a}{b}$
+
 `\overline{a}` $\overline{a}$
+
 `\underline{a}` $\underline{a}$
+
 `\overrightarrow{a}` $\overrightarrow{a}$
+
 `\sqrt{a}` $\sqrt{a}$
+
 `\sqrt[n]{a}` $\sqrt[n]{a}$
 
-## 算符
+## Arithmetic Operators
 
 `\cdot` $\cdot$
+
 `\times` $\times$
+
 `\div` $\div$
+
 `\over` $a\over b$
 
-## 模、分界符
+## Delimiter
 
 `\vert` $\vert$
+
 `|` $|$
+
 `\|` $||$
+
 `\Vert` $\Vert$
 
-## 集合
+## Set
 
 `\cap` $\cap$
+
 `\bigcap` $\bigcap$
+
 `\cup` $\cup$
+
 `\bigcup` $\bigcup$
+
 `\emptyset` $\emptyset$
+
 `\mathbb{R}` $\mathbb{R}$
+
 `\in` $\in$
+
 `\notin` $\notin$
+
 `\subset` $\subset$
+
 `\not\subset` $\not\subset$
+
 `\subsetneq` $\subsetneq$
+
 `\supset` $\supset$
+
 `\not\supset` $\not\supset$
+
 `\supsetneq` $\supsetneqq$
 
-## 三角函数
+## Trigonometry
 
 `\arctan{a}` $\arctan{a}$
 
-## 比较符号
+## Comparison
 
 `\gt` $\gt$
+
 `\ge` $\ge$
-`\lt` $\lt$
+
+`\lt`、`\leq` $\le$
+
 `\le` $\le$
+
 `\neq` $\neq$
 
-## 分段函数的书写
+`\gg` $\gg$
+
+`\ll` $\ll$
+
+## Piecewise Function
 
 ```latex
 \begin{equation}
@@ -103,9 +152,9 @@ $$
 \end{equation}
 $$
 
-## matrix & det
+## Matrices and Determinants
 
-```latex
+$$
 \begin{equation}
     \left(
         \begin{array}\\
@@ -114,4 +163,4 @@ $$
         \end{array}
     \right)
 \end{equation}
-```
+$$
