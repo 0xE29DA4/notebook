@@ -1,6 +1,6 @@
 # MOCs
 
-- ![[basic_concepts]]
+- ![[computer_network/mocs/basic_concepts]]
 - ![[physical_layer]]
 - ![[data_link_layer]]
 - ![[network_layer]]
