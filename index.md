@@ -1,3 +1,3 @@
-# Notebook repo
+# Notebook
 
 Hello, world!
