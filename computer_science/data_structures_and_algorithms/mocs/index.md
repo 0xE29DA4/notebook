@@ -4,7 +4,7 @@
 - [[linear_list]]
 - [[stack]]
 - [[queue]]
-- [[strings]]
+- [[string]]
 - [[hash_table]]
 - [[tree]]
 - [[binary_tree]]
