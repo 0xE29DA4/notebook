@@ -65,6 +65,10 @@
 
 `\over` $a\over b$
 
+`\bmod` $\bmod$
+
+`\%` $\%$
+
 ## Delimiter
 
 `\vert` $\vert$
