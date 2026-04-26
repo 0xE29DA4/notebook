@@ -1,1 +1,1 @@
-# UV Project Structure
+# uv Project Structure

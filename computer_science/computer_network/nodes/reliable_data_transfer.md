@@ -8,4 +8,4 @@
 - 序号机制
 - 重传机制
 
-ARQ 算法就是用來完成這些功能，[[automatic_repeat_request|這裏]] 給出了一些 ARQ 常用算法，你也可以參考 TCP 的具體實現。
+ARQ 算法就是用來完成這些功能，[[automatic_repeat_request|這裏]]給出了一些 ARQ 常用算法，你也可以參考 TCP 的具體實現。

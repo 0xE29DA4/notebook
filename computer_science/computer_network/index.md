@@ -1,5 +1,3 @@
-# 計算機網路
+# Computer Network
 
-## MOCs
-
-計算機網路學科概念錯綜複雜，本筆記倉庫使用 [[computer_network/mocs/index.md|MOCs]] 來編排内容
+内容地圖參考：[[computer_network/mocs/index.md|Computer Network MOCs]]

@@ -1,10 +1,10 @@
-# MOCs
+# Computer Network MOCs
 
-- ![[computer_network/mocs/basic_concepts]]
-- ![[physical_layer]]
-- ![[data_link_layer]]
-- ![[network_layer]]
-- ![[transport_layer]]
-- ![[session_layer]]
-- ![[presentation_layer]]
-- ![[application_layer]]
+- [[computer_network/mocs/basic_concepts|Basic Concepts]]
+- [[physical_layer|Physical Layer]]
+- [[data_link_layer|Data Link Layer]]
+- [[network_layer|Network Layer]]
+- [[transport_layer|Transport Layer]]
+- [[session_layer|Session Layer]]
+- [[presentation_layer|Presentation Layer]]
+- [[application_layer|Application Layer]]

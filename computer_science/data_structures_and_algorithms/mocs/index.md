@@ -1,19 +1,19 @@
 # MOCs
 
-- [[data_structures_and_algorithms/mocs/basic_concepts]]
-- [[linear_list]]
-- [[stack]]
-- [[queue]]
-- [[string]]
-- [[hash_table]]
-- [[tree]]
-- [[binary_tree]]
-- [[m-ary_tree]]
-- [[graph]]
-- [[set]]
-- [[search_algorithms]]
-- [[sorting_algorithms]]
-- [[prime_sieve]]
+- [[data_structures_and_algorithms/mocs/basic_concepts|Basic concepts]]
+- [[linear_list|Linear list]]
+- [[stack|Stack]]
+- [[queue|Queue]]
+- [[string|String]]
+- [[hash_table|Hash table]]
+- [[tree|Tree]]
+- [[binary_tree|Binary tree]]
+- [[m-ary_tree|M-ary tree]]
+- [[graph|Graph]]
+- [[set|Set]]
+- [[searching_algorithms|Searching algorithms]]
+- [[sorting_algorithms|Sorting algorithms]]
+- [[prime_sieve|Prime sieve]]
 - Other Data Structures
   - Sparse Table
   - Trie

@@ -1,5 +1,3 @@
-# 數據結構與算法
+# Data Structures and Algorithms
 
-## MOCs
-
-本筆記倉庫使用 [[data_structures_and_algorithms/mocs/index.md|MOCs]] 來編排内容
+内容地圖參考：[[data_structures_and_algorithms/mocs/index.md|Data Structures and Algorithms MOCs]]
