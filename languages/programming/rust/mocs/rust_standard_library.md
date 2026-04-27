@@ -1,1 +1,58 @@
 # Rust Standard Library
+
+- Basic
+  - std::prelude
+  - std::cmp
+    - PartialOrd
+    - Ord
+    - PartialEq
+    - Eq
+    - Ordering
+  - std::convert
+    - From
+    - Into
+    - TryFrom
+    - TryInto
+  - std::default
+    - Default
+  - std::fmt
+    - Debug
+    - Display
+  - std::iter
+    - Iterator
+  - std::env
+- Data structures and algorithms
+  - std::collections
+    - `Vec<T>`
+    - `&str`
+    - `String`
+    - `HashMap<K, V>`
+    - `HashSet<T>`
+    - `BTreeMap<K, V>`
+    - `BTreeSet<T>`
+    - `VecDeque<T>`
+- IO & files
+  - std::io
+  - std::fs
+  - std::path
+- Processes, Threads and Synchronization
+  - std::process
+    - Command
+  - std::thread
+  - std::sync
+    - Arc
+    - Mutex
+    - RwLock
+    - mpsc
+- Asynchronous Infrastructure
+  - std::future
+  - std::task
+  - std::pin
+- Date and time
+  - std::time
+    - SystemTime
+    - UNIX_EPOCH
+    - Instant
+    - Duration
+- Cross-language programming
+  - std::ffi

@@ -11,5 +11,5 @@
   - [[digit_analysis_method|数字分析法]]
   - [[mid-square_method|平方取中法]]
 - 碰撞處理
-  - [[Separate Chaining|拉鏈法]]
-  - [[Open Addressing|開發地址法]]
+  - [[separate_chaining|拉鏈法]]
+  - [[open_addressing|開放地址法]]

@@ -1,4 +1,4 @@
-# Computer Network MOCs
+# Computer Network Map of Contents
 
 - [[computer_network/mocs/basic_concepts|Basic Concepts]]
 - [[physical_layer|Physical Layer]]
