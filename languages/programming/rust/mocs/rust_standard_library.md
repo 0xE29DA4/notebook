@@ -3,10 +3,10 @@
 - Basic
   - std::prelude
   - std::cmp
-    - PartialOrd
-    - Ord
-    - PartialEq
     - Eq
+    - PartialEq
+    - Ord
+    - PartialOrd
     - Ordering
   - std::convert
     - From
@@ -20,21 +20,47 @@
     - Display
   - std::iter
     - Iterator
+  - std::rc
+    - Rc
+  - std::cell
+    - RefCell
   - std::env
 - Data structures and algorithms
-  - std::collections
-    - `Vec<T>`
-    - `&str`
+  - std::str
+    - `str`
+  - std::string
     - `String`
+  - std::vec
+    - `Vec<T>`
+  - std::collections
     - `HashMap<K, V>`
     - `HashSet<T>`
     - `BTreeMap<K, V>`
     - `BTreeSet<T>`
     - `VecDeque<T>`
+    - `BinaryHeap<T>`
+    - `LinkedList<T>`
 - IO & files
   - std::io
+    - Read
+    - BufRead
+    - BufReader
+    - Write
+    - BufWriter
   - std::fs
   - std::path
+- Networks
+  - std::net
+    - IpAddr
+      - Ipv4Addr
+      - Ipv6Addr
+    - SocketAddr
+    - SocketAddrV4
+    - SocketAddrV6
+    - TcpListener
+    - TcpStream
+    - UdpSocket
+    - ToSocketAddrs
 - Processes, Threads and Synchronization
   - std::process
     - Command
@@ -56,3 +82,6 @@
     - Duration
 - Cross-language programming
   - std::ffi
+- OS
+  - std::os::unix
+  - std::os::windows

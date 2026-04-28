@@ -1,5 +1,7 @@
 # Channel Multiplexing
 
+Table of Contents:
+
 - [Channel Multiplexing](#channel-multiplexing)
   - [时分多路复用 TDM](#时分多路复用-tdm)
   - [统计时分多路复用 STDM](#统计时分多路复用-stdm)
@@ -86,7 +88,7 @@ graph LR
 
 ## 码分多路复用 CDM
 
-给各个节点分配 `唯一` m 维码片序列 $\overrightarrow{c_i}$，**各节点的码片序列向量必须正交，滿足 $\overrightarrow{c_1} \times \overrightarrow{c_2} = 0$**。
+给各个节点分配**唯一的** m 维码片序列 $\overrightarrow{c_i}$，**各节点的码片序列向量必须正交，滿足 $\overrightarrow{c_1} \times \overrightarrow{c_2} = 0$**。
 
 範例：A 站向 B 站發送數據的流程
 
@@ -95,7 +97,7 @@ graph LR
   - 若要發送 0: 發送碼片序列 $-\overrightarrow{c_a}$
 - B 站解析数据
   - B 收到叠加信號 $\overrightarrow{m}$（可能很多站會給 B 發送信號）
-  - 計算 $a = \overrightarrow{m} \cdot \overrightarrow{c_a}$
+  - 計算 $a = \overrightarrow{m} \cdot \overrightarrow{c_a}$，實際上會計算規格化内積
   - a 為 0  → A 站未發送信號
   - a 為 1  → A 站發送了 1
   - a 為 -1 → A 站發送了 0
