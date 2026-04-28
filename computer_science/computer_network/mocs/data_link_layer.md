@@ -11,8 +11,8 @@
   - Connection-Oriented Virtual Circuit Service
   - Connectionless Datagram Service
 - Sublayers
-  - Logic Link Control(LLC)
-  - Medium Access Control(MAC)
+  - [[logic_link_control_sublayer|Logic Link Control(LLC) Sublayer]]
+  - [[medium_access_control_sublayer|Medium Access Control(MAC) Sublayer]]
 - Devices
-  - Bridge
-  - Switch
+  - [[bridge|Bridge]]
+  - [[switch|Switch]]

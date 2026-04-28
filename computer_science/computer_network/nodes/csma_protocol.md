@@ -5,7 +5,7 @@
 基於不同堅持算法的 CSMA 變體：
 
 - [[1-persistent_csma|1-persistent CSMA]]
-- [[Non-persistent_csma|Non-persistent CSMA]]
+- [[non-persistent_csma|Non-persistent CSMA]]
 - [[p-persistent_csma|p-persistent CSMA]]
 
 基於不同衝突處理方法的 CSMA 變體：

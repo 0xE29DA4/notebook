@@ -13,6 +13,8 @@
     - Into
     - TryFrom
     - TryInto
+    - AsRef
+    - AsMut
   - std::default
     - Default
   - std::fmt

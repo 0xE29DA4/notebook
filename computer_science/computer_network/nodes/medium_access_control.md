@@ -13,7 +13,5 @@
 - 隨機訪問
   - [[aloha_protocol|ALOHA 協議]]
   - [[csma_protocol|CSMA 協議]]
-  - [[csma_cd_protocol|CSMA/CD 協議]]
-  - [[csma_ca_protocol|CSMA/CA 協議]]
 - 輪詢訪問
   - 例如[[token_passing|令牌傳遞協議]]
