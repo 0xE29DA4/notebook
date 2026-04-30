@@ -19,3 +19,6 @@
   - Trie
   - Tree-of-trees
 - Other Algorithms
+  - Manacher Algorithm
+  - Bit
+  - Aho–Corasick Algorithm

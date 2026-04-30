@@ -2,6 +2,7 @@
 
 - Basic
   - std::prelude
+  - std::mem
   - std::cmp
     - Eq
     - PartialEq
