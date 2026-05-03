@@ -1,6 +1,6 @@
 # Rust
 
-- [[cargo_project_structure|Cargo Project Structure]]
-- [[rust_language_grammar|Rust Language Grammar]]
-- [[rust_standard_library|Rust Standard Library]]
-- [[rust_thirdparty_crates|Rust Third-Party Crates]]
+- [[cargo_project_structure|Cargo project structure]]
+- [[rust_language_grammar|Rust language grammar]]
+- [[rust_standard_library|Rust standard library]]
+- [[rust_thirdparty_crates|Rust third-party crates]]

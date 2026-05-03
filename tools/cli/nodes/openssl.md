@@ -32,12 +32,12 @@
 
 ## 常用的子命令
 
-- [[openssl_req]]
-- [[openssl_rand]]
-- [[openssl_genpkey]]
-- [[x509]]
-- [[s_client]]
-- [[dgst]]
-- [[enc]]
-- [[pkcs12]]
-- [[verify]]
+- [[openssl_req|openssl req]]
+- [[openssl_rand|openssl rand]]
+- [[openssl_genpkey|openssl genpkey]]
+- [[openssl_x509|openssl x509]]
+- [[openssl_s_client|openssl s_client]]
+- [[openssl_dgst|openssl dgst]]
+- [[openssl_enc|openssl enc]]
+- [[openssl_pkcs12|openssl pkcs12]]
+- [[openssl_verify|openssl verify]]
