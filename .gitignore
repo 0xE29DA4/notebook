@@ -2,8 +2,8 @@
 .DS_Store
 Thumbs.db
 
-# Obsidian
-/.obsidian/
-
 # Cache
 __pycache__
+
+# Obsidian
+/.obsidian/

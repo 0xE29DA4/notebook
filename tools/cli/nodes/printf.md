@@ -145,37 +145,37 @@
   `printf "%d\n" "'{{字符}}"`
 
 - 输出数组元素：
-  `printf "%s\n" "${{数组[@]}}"
+  `printf "%s\n" "${{数组[@]}}"`
 
 - 输出关联数组：
-  `printf "%s: %s\n" "{{key}}" "${{array[key]}}"
+  `printf "%s: %s\n" "{{key}}" "${{array[key]}}"`
 
 - 输出环境变量：
-  `printf "%s=%s\n" "{{变量名}}" "${{变量名}}"
+  `printf "%s=%s\n" "{{变量名}}" "${{变量名}}"`
 
 - 输出函数调用结果：
-  `printf "Result: %s\n" "$(function_name {{参数}})"
+  `printf "Result: %s\n" "$(function_name {{参数}})"`
 
 - 输出命令执行结果：
-  `printf "Output: %s\n" "$(command {{参数}})"
+  `printf "Output: %s\n" "$(command {{参数}})"`
 
 - 输出条件判断结果：
-  `printf "Status: %s\n" "$([[ {{条件}} ]] && echo "OK" || echo "FAIL")"
+  `printf "Status: %s\n" "$([[ {{条件}} ]] && echo "OK" || echo "FAIL")"`
 
 - 输出数学计算结果：
   `printf "Calculation: %d\n" $(({{表达式}}))`
 
 - 输出浮点数计算：
-  `printf "Result: %.2f\n" $(echo "{{表达式}}" | bc -l)
+  `printf "Result: %.2f\n" $(echo "{{表达式}}" | bc -l)`
 
 - 输出随机数：
-  `printf "Random: %d\n" $((RANDOM % {{范围}} + {{最小值}}))
+  `printf "Random: %d\n" $((RANDOM % {{范围}} + {{最小值}}))`
 
 - 输出当前时间戳：
-  `printf "Timestamp: %s\n" $(date +%s)
+  `printf "Timestamp: %s\n" $(date +%s)`
 
 - 输出格式化的时间：
-  `printf "Time: %(%Y-%m-%d %H:%M:%S)T\n" -1
+  `printf "Time: %(%Y-%m-%d %H:%M:%S)T\n" -1`
 
 - 输出倒计时：
   `for i in {{5..1}}; do printf "\rCountdown: %d" $i; sleep 1; done; printf "\rDone!\n"`
@@ -184,7 +184,7 @@
   `printf "Processing" && for i in {1..5}; do printf "."; sleep 1; done; printf " Complete\n"`
 
 - 输出螺旋文本：
-  `for i in {1..10}; do printf "%*s\n" $i "{{文本}}"; done
+  `for i in {1..10}; do printf "%*s\n" $i "{{文本}}"; done`
 
 - 输出金字塔：
   `for i in {1..5}; do printf "%*s\n" $i "$(printf "%*s" $((2*i-1)) | tr ' ' '*')"; done`
